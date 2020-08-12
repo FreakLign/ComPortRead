@@ -1,4 +1,4 @@
-﻿using DataHandle;
+﻿using HexDataHandle;
 using FileHandle;
 using FormHandle;
 using System.ComponentModel;

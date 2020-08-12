@@ -1,0 +1,5 @@
+D:\Project Code\ComPortRead\Finally Export\HexDataHandle.dll
+D:\Project Code\ComPortRead\Finally Export\HexDataHandle.pdb
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\HexDataHandle.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\HexDataHandle.dll
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\HexDataHandle.pdb

@@ -1,0 +1,6 @@
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\MessageHandle.dll
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\MessageHandle.pdb
+D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.dll
+D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.pdb

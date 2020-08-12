@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminate", ".\Terminate\Terminate.csproj", "{53411F3A-A81B-4EF6-AE34-5E35884480D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminate", "Terminate\Terminate.csproj", "{53411F3A-A81B-4EF6-AE34-5E35884480D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageTypeDefiner", ".\MessageTypeDefiner\MessageTypeDefiner.csproj", "{6CCDFEE5-F5BD-4786-AC13-D14A4AEE193C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageTypeDefiner", "MessageTypeDefiner\MessageTypeDefiner.csproj", "{6CCDFEE5-F5BD-4786-AC13-D14A4AEE193C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandle", ".\DataHandle\DataHandle.csproj", "{C99E15BB-C543-4DA9-B295-6E52EF13A29C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexDataHandle", "DataHandle\HexDataHandle.csproj", "{C99E15BB-C543-4DA9-B295-6E52EF13A29C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", ".\Encryption\Encryption.csproj", "{70D2FE46-FE55-4FD5-B2A8-14C453A0ECFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "Encryption\Encryption.csproj", "{70D2FE46-FE55-4FD5-B2A8-14C453A0ECFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComPort", ".\ComPort\ComPort.csproj", "{916032D0-E858-4A54-BDA4-F4999DF5574B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComPort", "ComPort\ComPort.csproj", "{916032D0-E858-4A54-BDA4-F4999DF5574B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandle", ".\FileHandle\FileHandle.csproj", "{2EA9742A-F5FC-4C47-A736-09C0A6755BBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandle", "FileHandle\FileHandle.csproj", "{2EA9742A-F5FC-4C47-A736-09C0A6755BBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormHandle", ".\FormHandle\FormHandle.csproj", "{B3DAEEA0-FF90-4B4F-BFCE-AB9A5DE7B9AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormHandle", "FormHandle\FormHandle.csproj", "{B3DAEEA0-FF90-4B4F-BFCE-AB9A5DE7B9AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHandle", "MessageHandle\MessageHandle.csproj", "{674E257E-637B-4485-ACB8-FC9B2FF1A7D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{B3DAEEA0-FF90-4B4F-BFCE-AB9A5DE7B9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3DAEEA0-FF90-4B4F-BFCE-AB9A5DE7B9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3DAEEA0-FF90-4B4F-BFCE-AB9A5DE7B9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674E257E-637B-4485-ACB8-FC9B2FF1A7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674E257E-637B-4485-ACB8-FC9B2FF1A7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674E257E-637B-4485-ACB8-FC9B2FF1A7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674E257E-637B-4485-ACB8-FC9B2FF1A7D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

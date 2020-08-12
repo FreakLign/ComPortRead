@@ -92,7 +92,10 @@ namespace FileHandle
         #endregion
 
         #region 数据读入
+        public static void GetDataFromFile(string path)
+        {
 
+        }
         #endregion
     }
 }
