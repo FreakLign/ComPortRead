@@ -1,0 +1,65 @@
+﻿<Window x:Class="MessageTypeDefiner.MessageTypeDefinerClass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:MessageTypeDefiner"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="报文格式定义器"
+        Height="500" 
+        Width="400" 
+        Background="Transparent">
+    <materialDesign:Card 
+        MouseDown="DropWindow"
+        UniformCornerRadius="10"
+        Padding="20"
+        Margin="40" 
+        Background="White">
+        <StackPanel>
+            <Button HorizontalAlignment="Right" 
+                Style="{StaticResource MaterialDesignToolForegroundButton}"
+                Width="40"
+                Foreground="Black"
+                Click="Exit"
+                materialDesign:RippleAssist.IsCentered="True">
+                <materialDesign:PackIcon Kind="Close"  />
+            </Button>
+            <TextBlock
+                TextAlignment="Center"
+                Style="{StaticResource MaterialDesignBody1TextBlock}"
+                >报文格式定义器</TextBlock>
+            <TextBox
+                materialDesign:HintAssist.Hint="格式名"
+                Text="{Binding TypeName}"
+                TextAlignment="Center"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Separator Style="{StaticResource MaterialDesignDarkSeparator}"/>
+            <TextBox
+                Text="{Binding TypeHead}"
+                materialDesign:HintAssist.Hint="头部(二位十六进制编码)"
+                PreviewKeyDown="LimitContent"
+                TextAlignment="Center"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                materialDesign:HintAssist.Hint="尾部(二位十六进制编码)"
+                PreviewKeyDown="LimitContent"
+                TextAlignment="Center"
+                Text="{Binding TypeFoot}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                materialDesign:HintAssist.Hint="内容长度"
+                TextAlignment="Center"
+                PreviewKeyDown="LimitContentInDigital"
+                Text="{Binding TypeLength}"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Separator
+                Style="{StaticResource MaterialDesignDarkSeparator}"/>
+            <Button
+                Click="ExportJSON">生成报文类型文件</Button>
+        </StackPanel>
+    </materialDesign:Card>
+</Window>

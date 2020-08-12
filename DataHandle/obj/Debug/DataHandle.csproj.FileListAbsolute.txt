@@ -1,0 +1,7 @@
+D:\Project Code\ComPortRead\DataHandle\bin\Debug\DataHandle.dll
+D:\Project Code\ComPortRead\DataHandle\bin\Debug\DataHandle.pdb
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\DataHandle.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\DataHandle.dll
+D:\Project Code\ComPortRead\DataHandle\obj\Debug\DataHandle.pdb
+D:\Project Code\ComPortRead\Finally Export\DataHandle.dll
+D:\Project Code\ComPortRead\Finally Export\DataHandle.pdb

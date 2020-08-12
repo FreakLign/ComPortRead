@@ -1,0 +1,5 @@
+D:\Project Code\ComPortRead\Finally Export\ComPort.dll
+D:\Project Code\ComPortRead\Finally Export\ComPort.pdb
+D:\Project Code\ComPortRead\ComPort\obj\Debug\ComPort.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\ComPort\obj\Debug\ComPort.dll
+D:\Project Code\ComPortRead\ComPort\obj\Debug\ComPort.pdb

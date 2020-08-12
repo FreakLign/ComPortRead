@@ -1,0 +1,33 @@
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MessageTypeDefiner.exe.config
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MessageTypeDefiner.exe
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MessageTypeDefiner.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MaterialDesignColors.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MaterialDesignColors.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\App.g.cs
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner_MarkupCompile.cache
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner_MarkupCompile.lref
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\App.baml
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.g.resources
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.Properties.Resources.resources
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.csproj.GenerateResource.cache
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.csproj.CopyComplete
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.exe
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.g.cs
+D:\Project Code\ComPortRead\MessageTypeDefiner\obj\Debug\MessageTypeDefiner.baml
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\DataHandle.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\DataHandle.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\Encryption.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\Encryption.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\FileHandle.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\FormHandle.dll
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\FileHandle.pdb
+D:\Project Code\ComPortRead\MessageTypeDefiner\bin\Debug\FormHandle.pdb
+D:\Project Code\ComPortRead\Finally Export\MessageTypeDefiner.exe.config
+D:\Project Code\ComPortRead\Finally Export\MessageTypeDefiner.exe
+D:\Project Code\ComPortRead\Finally Export\MessageTypeDefiner.pdb

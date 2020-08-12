@@ -1,0 +1,8 @@
+D:\Project Code\ComPortRead\FormHandle\bin\Debug\FormHandle.dll
+D:\Project Code\ComPortRead\FormHandle\bin\Debug\FormHandle.pdb
+D:\Project Code\ComPortRead\FormHandle\obj\Debug\FormHandle.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\FormHandle\obj\Debug\FormHandle.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\FormHandle\obj\Debug\FormHandle.dll
+D:\Project Code\ComPortRead\FormHandle\obj\Debug\FormHandle.pdb
+D:\Project Code\ComPortRead\Finally Export\FormHandle.dll
+D:\Project Code\ComPortRead\Finally Export\FormHandle.pdb

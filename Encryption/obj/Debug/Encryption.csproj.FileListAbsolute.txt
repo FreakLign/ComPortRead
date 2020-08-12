@@ -1,0 +1,8 @@
+D:\Project Code\ComPortRead\Encryption\bin\Debug\Encryption.dll
+D:\Project Code\ComPortRead\Encryption\bin\Debug\Encryption.pdb
+D:\Project Code\ComPortRead\Encryption\obj\Debug\Encryption.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\Encryption\obj\Debug\Encryption.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\Encryption\obj\Debug\Encryption.dll
+D:\Project Code\ComPortRead\Encryption\obj\Debug\Encryption.pdb
+D:\Project Code\ComPortRead\Finally Export\Encryption.dll
+D:\Project Code\ComPortRead\Finally Export\Encryption.pdb
