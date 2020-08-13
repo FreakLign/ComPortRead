@@ -1,5 +1,6 @@
 ﻿using Encryption;
 using HexDataHandle;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace FileHandle
@@ -42,7 +43,7 @@ namespace FileHandle
         [DataMember]
         public int MessageLength { get; set; }
         /// <summary>
-        /// 报文头部
+        /// 报文头部(未加入序列化)
         /// </summary>
         public byte[] Head
         {
@@ -52,7 +53,7 @@ namespace FileHandle
             }
         }
         /// <summary>
-        /// 报文尾部
+        /// 报文尾部(未加入序列化)
         /// </summary>
         public byte[] Foot
         {
@@ -60,6 +61,28 @@ namespace FileHandle
             {
                 return AESEncrypter.Decrypt(TypeFoot, TypeName, TypeFootLength);
             }
+        }
+        /// <summary>
+        /// 判断数据是否是本类型
+        /// </summary>
+        /// <param name="origionData"></param>
+        /// <returns></returns>
+        public bool GetCheck(byte[] origionData)
+        {
+            if (origionData != null) return false;
+            if (origionData.Length != this.MessageLength + this.TypeFootLength + this.TypeHeadLength) return false;
+            for(int i = 0; i < TypeHeadLength; i++)
+            {
+                if (origionData[i] != Head[i]) return false;
+            }
+            for (int i = 0; i < this.TypeFootLength; i++) 
+            {
+                if (origionData[i + this.TypeHeadLength + this.MessageLength] != Foot[i]) 
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

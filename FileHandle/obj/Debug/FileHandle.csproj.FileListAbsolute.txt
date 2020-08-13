@@ -6,3 +6,4 @@ D:\Project Code\ComPortRead\FileHandle\obj\Debug\FileHandle.dll
 D:\Project Code\ComPortRead\FileHandle\obj\Debug\FileHandle.pdb
 D:\Project Code\ComPortRead\Finally Export\FileHandle.dll
 D:\Project Code\ComPortRead\Finally Export\FileHandle.pdb
+D:\Project Code\ComPortRead\FileHandle\obj\Debug\FileHandle.csproj.CopyComplete

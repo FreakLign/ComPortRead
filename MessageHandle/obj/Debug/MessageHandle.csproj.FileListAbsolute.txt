@@ -7,3 +7,5 @@ D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.pdb
 D:\Project Code\ComPortRead\MessageHandle\bin\Debug\FileHandle.dll
 D:\Project Code\ComPortRead\MessageHandle\bin\Debug\FileHandle.pdb
 D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csproj.CopyComplete
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\Encryption.dll
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\Encryption.pdb
