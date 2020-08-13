@@ -17,6 +17,8 @@ namespace MessageTypeDefiner
     public partial class MessageTypeDefinerClass : Window
     {
         private BindControls _controls = new BindControls();
+
+        MessageType type = new MessageType();
         public MessageTypeDefinerClass()
         {
             InitializeComponent();
@@ -98,16 +100,22 @@ namespace MessageTypeDefiner
         /// <param name="e"></param>
         private void ExportJSON(object sender, RoutedEventArgs e)
         {
-            MessageType type = new MessageType
+            if (_controls.TypeFoot != "" && _controls.TypeHead!="" && _controls.TypeName != "")
             {
-                MessageLength = _controls.TypeLength,
-                TypeFoot = Encryption.AESEncrypter.Encrypt(HexCode.GetHex(_controls.TypeFoot), _controls.TypeName),
-                TypeFootLength = HexCode.GetHex(_controls.TypeFoot).Length,
-                TypeHead = Encryption.AESEncrypter.Encrypt(HexCode.GetHex(_controls.TypeHead), _controls.TypeName),
-                TypeHeadLength = HexCode.GetHex(_controls.TypeFoot).Length,
-                TypeName = _controls.TypeName,
-            };
-            FileHandler.WriteJson(type);
+                type = new MessageType
+                {
+                    MessageLength = _controls.TypeLength,
+                    TypeFoot = Encryption.AESEncrypter.Encrypt(HexCode.GetHex(_controls.TypeFoot), _controls.TypeName),
+                    TypeFootLength = HexCode.GetHex(_controls.TypeFoot).Length,
+                    TypeHead = Encryption.AESEncrypter.Encrypt(HexCode.GetHex(_controls.TypeHead), _controls.TypeName),
+                    TypeHeadLength = HexCode.GetHex(_controls.TypeFoot).Length,
+                    TypeName = _controls.TypeName,
+                };
+                FileHandler.WriteJson(type,(message)=> {
+                    SnackbarThree.MessageQueue.Enqueue(message);
+                    return "";
+                });
+            }
         }
         /// <summary>
         /// 退出程序
@@ -125,7 +133,7 @@ namespace MessageTypeDefiner
         /// <param name="e"></param>
         private void LimitContent(object sender, KeyEventArgs e)
         {
-            if((e.Key < Key.D0 ||e.Key > Key.F) && (e.Key <Key.NumPad0 || e.Key > Key.NumPad9))
+            if((e.Key < Key.D0 ||e.Key > Key.F) && (e.Key <Key.NumPad0 || e.Key > Key.NumPad9) && e.Key!= Key.Back && e.Key != Key.Tab)
             {
                 e.Handled = true;
             }
@@ -137,7 +145,7 @@ namespace MessageTypeDefiner
         /// <param name="e"></param>
         private void LimitContentInDigital(object sender, KeyEventArgs e)
         {
-            if ((e.Key < Key.D0 || e.Key > Key.D9) && (e.Key < Key.NumPad0 || e.Key > Key.NumPad9))
+            if ((e.Key < Key.D0 || e.Key > Key.D9) && (e.Key < Key.NumPad0 || e.Key > Key.NumPad9) && e.Key != Key.Back && e.Key != Key.Tab)
             {
                 e.Handled = true;
             }

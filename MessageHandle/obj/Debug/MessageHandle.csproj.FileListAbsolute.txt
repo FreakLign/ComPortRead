@@ -4,3 +4,6 @@ D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csprojAssembly
 D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csproj.CoreCompileInputs.cache
 D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.dll
 D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.pdb
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\FileHandle.dll
+D:\Project Code\ComPortRead\MessageHandle\bin\Debug\FileHandle.pdb
+D:\Project Code\ComPortRead\MessageHandle\obj\Debug\MessageHandle.csproj.CopyComplete

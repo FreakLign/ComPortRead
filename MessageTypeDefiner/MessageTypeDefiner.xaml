@@ -19,47 +19,53 @@
         Padding="20"
         Margin="40" 
         Background="White">
-        <StackPanel>
-            <Button HorizontalAlignment="Right" 
+        <Grid>
+
+            <StackPanel>
+                <Button HorizontalAlignment="Right" 
                 Style="{StaticResource MaterialDesignToolForegroundButton}"
                 Width="40"
                 Foreground="Black"
                 Click="Exit"
                 materialDesign:RippleAssist.IsCentered="True">
-                <materialDesign:PackIcon Kind="Close"  />
-            </Button>
-            <TextBlock
+                    <materialDesign:PackIcon Kind="Close"  />
+                </Button>
+                <TextBlock
                 TextAlignment="Center"
                 Style="{StaticResource MaterialDesignBody1TextBlock}"
                 >报文格式定义器</TextBlock>
-            <TextBox
+                <TextBox
                 materialDesign:HintAssist.Hint="格式名"
                 Text="{Binding TypeName}"
                 TextAlignment="Center"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <Separator Style="{StaticResource MaterialDesignDarkSeparator}"/>
-            <TextBox
+                <Separator Style="{StaticResource MaterialDesignDarkSeparator}"/>
+                <TextBox
                 Text="{Binding TypeHead}"
                 materialDesign:HintAssist.Hint="头部(二位十六进制编码)"
                 PreviewKeyDown="LimitContent"
                 TextAlignment="Center"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox
+                <TextBox
                 materialDesign:HintAssist.Hint="尾部(二位十六进制编码)"
                 PreviewKeyDown="LimitContent"
                 TextAlignment="Center"
                 Text="{Binding TypeFoot}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox
+                <TextBox
                 materialDesign:HintAssist.Hint="内容长度"
                 TextAlignment="Center"
                 PreviewKeyDown="LimitContentInDigital"
                 Text="{Binding TypeLength}"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <Separator
+                <Separator
                 Style="{StaticResource MaterialDesignDarkSeparator}"/>
-            <Button
+                <Button
                 Click="ExportJSON">生成报文类型文件</Button>
-        </StackPanel>
+            </StackPanel>
+            <materialDesign:Snackbar
+                MessageQueue="{materialDesign:MessageQueue}"
+                x:Name="SnackbarThree" />
+        </Grid>
     </materialDesign:Card>
 </Window>

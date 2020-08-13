@@ -8,5 +8,8 @@ namespace MessageHandle
 {
     public class MessageHandler
     {
+        //报文比对
+        //报文合法验证
+        //新建报文
     }
 }

@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Json;
 using Microsoft.Win32;
 using System.Text;
 using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace FileHandle
 {
@@ -39,25 +40,32 @@ namespace FileHandle
             return null;
         }
         /// <summary>
-        /// 导出Json（序列化）
+        /// 导出JSON（序列化）
         /// </summary>
-        /// <param name="messageType">输出报文类型</param>
-        public static void WriteJson(MessageType messageType)
+        /// <param name="messageType">报文类型</param>
+        /// <param name="writeJsonCallback">导出回调</param>
+        public static void WriteJson(MessageType messageType,Func<string, string> writeJsonCallback)
         {
             DataContractJsonSerializer typeJson = new DataContractJsonSerializer(typeof(MessageType));
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 typeJson.WriteObject(memoryStream, messageType);
                 memoryStream.Position = 0;
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "JSON|*.json";
-                saveFileDialog.FileName = messageType.TypeName;
-                if ((bool)saveFileDialog.ShowDialog())
+                if (!Directory.Exists("./MessageType"))
                 {
-                    using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                    Directory.CreateDirectory("./MessageType");
+                }
+                if (!File.Exists(messageType.TypeName))
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(messageType.TypeName))
                     {
                         streamWriter.Write(Encoding.UTF8.GetString(memoryStream.ToArray()));
+                        writeJsonCallback("成功导出！");
                     }
+                }
+                else
+                {
+                    writeJsonCallback("该类型已存在");
                 }
             }
         }

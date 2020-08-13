@@ -47,5 +47,15 @@
     <Compile Include="MessageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataHandle\HexDataHandle.csproj">
+      <Project>{c99e15bb-c543-4da9-b295-6e52ef13a29c}</Project>
+      <Name>HexDataHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Encryption\Encryption.csproj">
+      <Project>{70d2fe46-fe55-4fd5-b2a8-14c453a0ecfc}</Project>
+      <Name>Encryption</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

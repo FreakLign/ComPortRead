@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using Encryption;
+using HexDataHandle;
+using System.Runtime.Serialization;
 
 namespace FileHandle
 {
@@ -39,5 +41,25 @@ namespace FileHandle
         /// </summary>
         [DataMember]
         public int MessageLength { get; set; }
+        /// <summary>
+        /// 报文头部
+        /// </summary>
+        public byte[] Head
+        {
+            get
+            {
+                return AESEncrypter.Decrypt(TypeHead, TypeName,TypeHeadLength);
+            }
+        }
+        /// <summary>
+        /// 报文尾部
+        /// </summary>
+        public byte[] Foot
+        {
+            get
+            {
+                return AESEncrypter.Decrypt(TypeFoot, TypeName, TypeFootLength);
+            }
+        }
     }
 }
