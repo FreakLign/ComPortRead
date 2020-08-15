@@ -117,6 +117,10 @@
       <Project>{2EA9742A-F5FC-4C47-A736-09C0A6755BBB}</Project>
       <Name>FileHandle</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MessageHandle\MessageHandle.csproj">
+      <Project>{674e257e-637b-4485-acb8-fc9b2ff1a7d1}</Project>
+      <Name>MessageHandle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StaticMessageTypeInRuntime\StaticMessageTypeInRuntime.csproj">
       <Project>{04e440b1-b1e2-461b-8114-9a5eb78d1e04}</Project>
       <Name>StaticMessageTypeInRuntime</Name>

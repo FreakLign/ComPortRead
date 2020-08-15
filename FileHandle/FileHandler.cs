@@ -55,7 +55,7 @@ namespace FileHandle
              *      2. 如果文件路径不存在，则创造该路径文件夹
              *      3. 
              * 
-             */
+             ***********************************************************************/
             DataContractJsonSerializer typeJson = new DataContractJsonSerializer(typeof(MessageType));
             using (MemoryStream memoryStream = new MemoryStream())
             {

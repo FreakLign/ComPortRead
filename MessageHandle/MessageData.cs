@@ -15,7 +15,7 @@ namespace MessageHandle
         /// <summary>
         /// 报文类型
         /// </summary>
-        public MessageType MessageType { get;}
+        public MessageType MessageType { get { return _type; } }
         /// <summary>
         /// 完整字节数组
         /// </summary>
