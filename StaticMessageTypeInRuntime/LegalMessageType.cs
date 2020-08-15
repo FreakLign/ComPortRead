@@ -1,4 +1,5 @@
 ﻿using FileHandle;
+using HexDataHandle;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -13,8 +14,8 @@ namespace StaticMessageTypeInRuntime
 {
     public class LegalMessageType
     {
-        private static ConcurrentDictionary<byte[], MessageType> _messageTypesDictionaryWithHead;
-        public static ConcurrentDictionary<byte[], MessageType> MessageTypesDictionaryWithHead
+        private static ConcurrentDictionary<string, MessageType> _messageTypesDictionaryWithHead;
+        public static ConcurrentDictionary<string, MessageType> MessageTypesDictionaryWithHead
         {
             get
             {
@@ -54,11 +55,11 @@ namespace StaticMessageTypeInRuntime
                     });
                     if (type != null)
                     {
-                        if (_messageTypesDictionaryWithHead == null) _messageTypesDictionaryWithHead = new ConcurrentDictionary<byte[], MessageType>();
+                        if (_messageTypesDictionaryWithHead == null) _messageTypesDictionaryWithHead = new ConcurrentDictionary<string, MessageType>();
                         if (_messageTypesDictionaryWithName == null) _messageTypesDictionaryWithName = new ConcurrentDictionary<string, MessageType>();
-                        if ((!_messageTypesDictionaryWithHead.ContainsKey(type.Head)) && (!_messageTypesDictionaryWithName.ContainsKey(type.TypeName)))
+                        if ((!_messageTypesDictionaryWithHead.ContainsKey(HexCode.GetString(type.Head))) && (!_messageTypesDictionaryWithName.ContainsKey(type.TypeName)))
                         {
-                            _messageTypesDictionaryWithHead.TryAdd(type.Head, type);
+                            _messageTypesDictionaryWithHead.TryAdd(HexCode.GetString(type.Head), type);
                             _messageTypesDictionaryWithName.TryAdd(type.TypeName, type);
                             typeNames.Add(type.TypeName);
                         }

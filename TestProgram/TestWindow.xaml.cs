@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FileHandle;
 using HexDataHandle;
+using DataSplitAndRecognize;
+using System.Collections.Concurrent;
 
 namespace TestProgram
 {
@@ -31,8 +33,7 @@ namespace TestProgram
             {
                 OutputBox.Text += str + "\n";
             }
-            MessageType typeTest = LegalMessageType.MessageTypesDictionaryWithName["B13"];
-            MessageBox.Show(HexCode.GetString(typeTest.Head));
+            Spliter.Split(new byte[] {0x9e, 0x8f, 0x11, 0x12, 0x13, 0x11, 0x12, 0x13, 0x11, 0x12, 0x13, 0x11, 0x12, 0x13, 0x11, 0x12, 0x13, 0x11, 0x12, 0x13, 0xcc }, LegalMessageType.MessageTypesDictionaryWithHead);
         }
     }
 }

@@ -14,3 +14,4 @@ D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.exe
 D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.pdb
 D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestWindow.g.cs
 D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestWindow.baml
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\App.baml

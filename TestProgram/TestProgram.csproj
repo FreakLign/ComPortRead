@@ -37,6 +37,14 @@
     <ApplicationIcon>ED.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\计划\DayPlan\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\计划\DayPlan\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -100,6 +108,10 @@
     <ProjectReference Include="..\DataHandle\HexDataHandle.csproj">
       <Project>{c99e15bb-c543-4da9-b295-6e52ef13a29c}</Project>
       <Name>HexDataHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSplitAndRecognize\DataSplitAndRecognize.csproj">
+      <Project>{4e37febf-d0e2-446a-a93e-b824f23b9fe5}</Project>
+      <Name>DataSplitAndRecognize</Name>
     </ProjectReference>
     <ProjectReference Include="..\FileHandle\FileHandle.csproj">
       <Project>{2EA9742A-F5FC-4C47-A736-09C0A6755BBB}</Project>
