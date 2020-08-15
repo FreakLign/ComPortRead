@@ -8,6 +8,9 @@ using System.IO;
 
 namespace Encryption
 {
+    /// <summary>
+    /// AES加密 | AES解密
+    /// </summary>
     public class AESEncrypter
     {
         /// <summary>
@@ -91,12 +94,12 @@ namespace Encryption
             return trulyData.ToArray();
         }
         /// <summary>
-        ///  指定实际裁断长度
+        ///  指定实际裁断长度（排除尾部 0 ）
         /// </summary>
-        /// <param name="data"></param>
-        /// <param name="key"></param>
-        /// <param name="cutLength"></param>
-        /// <returns></returns>
+        /// <param name="data">原数据</param>
+        /// <param name="key">密钥</param>
+        /// <param name="cutLength">截取长度</param>
+        /// <returns>解密字节数组</returns>
         public static byte[] Decrypt(string data, string key, int cutLength)
         {
             if (data == null || data.Length == 0 || key == null || key == "") return null;

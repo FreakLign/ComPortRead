@@ -6,10 +6,12 @@ namespace MessageHandle
 {
     public class MessageData
     {
+        private string _bodyInStr;
+        private byte[] _bodyIN;
         /// <summary>
         /// 报文内容（string）
         /// </summary>
-        public string BodyInStrs { get; set; }
+        public string BodyInStrs { get;}
         /// <summary>
         /// 报文内容
         /// </summary>
@@ -17,7 +19,7 @@ namespace MessageHandle
         /// <summary>
         /// 报文类型
         /// </summary>
-        public MessageType MessageType { get; set; }
+        public MessageType MessageType { get;}
         /// <summary>
         /// 完整字节数组
         /// </summary>
@@ -32,9 +34,9 @@ namespace MessageHandle
                 return completeData.ToArray();
             }
         }
-        public MessageData(byte[] origionData)
-        {
+        //public static MessageData CreateMessageData(MessageType messageType, byte[] Data)
+        //{
 
-        }
+        //}
     }
 }

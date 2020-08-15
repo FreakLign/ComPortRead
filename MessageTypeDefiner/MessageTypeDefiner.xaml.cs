@@ -100,7 +100,7 @@ namespace MessageTypeDefiner
         /// <param name="e"></param>
         private void ExportJSON(object sender, RoutedEventArgs e)
         {
-            if (_controls.TypeFoot != "" && _controls.TypeHead!="" && _controls.TypeName != "")
+            if (_controls.TypeFoot != "" && _controls.TypeHead != "" && _controls.TypeName != "")
             {
                 type = new MessageType
                 {
@@ -111,9 +111,9 @@ namespace MessageTypeDefiner
                     TypeHeadLength = HexCode.GetHex(_controls.TypeFoot).Length,
                     TypeName = _controls.TypeName,
                 };
-                FileHandler.WriteJson(type,(message)=> {
+                FileHandler.WriteJson(@"./MessageTypes/" + type.TypeName + ".json", type, (message) =>
+                {
                     SnackbarThree.MessageQueue.Enqueue(message);
-                    return "";
                 });
             }
         }
@@ -133,7 +133,7 @@ namespace MessageTypeDefiner
         /// <param name="e"></param>
         private void LimitContent(object sender, KeyEventArgs e)
         {
-            if((e.Key < Key.D0 ||e.Key > Key.F) && (e.Key <Key.NumPad0 || e.Key > Key.NumPad9) && e.Key!= Key.Back && e.Key != Key.Tab)
+            if ((e.Key < Key.D0 || e.Key > Key.F) && (e.Key < Key.NumPad0 || e.Key > Key.NumPad9) && e.Key != Key.Back && e.Key != Key.Tab)
             {
                 e.Handled = true;
             }

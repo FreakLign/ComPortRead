@@ -1,0 +1,16 @@
+D:\Project Code\ComPortRead\Finally Export\TestProgram.exe.config
+D:\Project Code\ComPortRead\Finally Export\TestProgram.exe
+D:\Project Code\ComPortRead\Finally Export\TestProgram.pdb
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\App.g.cs
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram_MarkupCompile.cache
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram_MarkupCompile.lref
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.g.resources
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.Properties.Resources.resources
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.csproj.GenerateResource.cache
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.csproj.CopyComplete
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.exe
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestProgram.pdb
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestWindow.g.cs
+D:\Project Code\ComPortRead\TestProgram\obj\Debug\TestWindow.baml

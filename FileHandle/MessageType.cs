@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 
 namespace FileHandle
 {
-
     /// <summary>
     /// 报文类型
     /// </summary>

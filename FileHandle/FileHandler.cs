@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 namespace FileHandle
 {
+    /// <summary>
+    /// JSON序列化 | JSON反序列化 | 显示数据输出 | 读取报文数据（未完成）
+    /// </summary>
     public class FileHandler
     {
         #region JSON
@@ -17,7 +20,7 @@ namespace FileHandle
         /// <param name="path">文件路径</param>
         /// <param name="readCallback">读取回调</param>
         /// <returns>文件路径不对返回null</returns>
-        public static MessageType ReadJson(string path,Func<string,bool> readCallback)
+        public static MessageType ReadJson(string path,Action<string> readCallback)
         {
             if (File.Exists(path))
             {
@@ -44,20 +47,27 @@ namespace FileHandle
         /// </summary>
         /// <param name="messageType">报文类型</param>
         /// <param name="writeJsonCallback">导出回调</param>
-        public static void WriteJson(MessageType messageType,Func<string, string> writeJsonCallback)
+        public static void WriteJson(string path, MessageType messageType,Action<string> writeJsonCallback)
         {
+            /***********************************************************************
+             *      1. 将messageType序列化为Javascript对象表示法（JSON）数据，将生成
+             *         数据写入memoryStream流中
+             *      2. 如果文件路径不存在，则创造该路径文件夹
+             *      3. 
+             * 
+             */
             DataContractJsonSerializer typeJson = new DataContractJsonSerializer(typeof(MessageType));
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 typeJson.WriteObject(memoryStream, messageType);
                 memoryStream.Position = 0;
-                if (!Directory.Exists("./MessageType"))
+                if (!Directory.GetParent(path).Exists)
                 {
-                    Directory.CreateDirectory("./MessageType");
+                    Directory.CreateDirectory(Directory.GetParent(path).FullName);
                 }
-                if (!File.Exists(messageType.TypeName))
+                if (!File.Exists(path))
                 {
-                    using (StreamWriter streamWriter = new StreamWriter(messageType.TypeName))
+                    using (StreamWriter streamWriter = new StreamWriter(path))
                     {
                         streamWriter.Write(Encoding.UTF8.GetString(memoryStream.ToArray()));
                         writeJsonCallback("成功导出！");
@@ -73,7 +83,7 @@ namespace FileHandle
 
         #region 显示数据输出
         /// <summary>
-        /// 
+        /// 导出数据
         /// </summary>
         /// <param name="displayData"></param>
         public static void ExportData(Func<int,string[]> displayData)
