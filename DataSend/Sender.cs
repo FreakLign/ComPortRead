@@ -1,4 +1,5 @@
 ﻿using ComPort;
+using MessageHandle;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,15 @@ namespace DataSend
 {
     public class Sender
     {
-        public Sender(string portName, int baudRate) 
+        public enum SendMode { ManualMode, AutoSendMode}
+        public enum MessageMode { FixedMessage, RandomMessage}
+        public Sender(string portName, int baudRate, Action<bool,string> errorAction)
         {
-            Ports.InitialOut(portName, baudRate, (e) => { });
+            Ports.InitialOut(portName, baudRate, errorAction);
+        }
+        public void SendMessage(MessageData data, Action<string> sendDataErrorCallback)
+        {
+            Ports.SendOut(data.CompleteData, sendDataErrorCallback);
         }
     }
 }

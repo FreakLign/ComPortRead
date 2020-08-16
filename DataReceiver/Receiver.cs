@@ -18,20 +18,21 @@ namespace DataReceiver
         /// <param name="baudRate">串口波特率</param>
         /// <param name="receivedDataAction">当串口接收到数据时bool 为True，object为byte[]，当返回错误信息时，bool为false，object为string</param>
         /// <param name="receivedMessageData">当内容被识别为报文时，进行此方法</param>
-        public Receiver(string portName, int  baudRate, Action<bool,object> receivedDataAction, Action<object> receivedMessageData)
+        public Receiver(string portName, int baudRate, Action<bool, bool, object> receivedDataAction, Action<object> receivedMessageData)
         {
-            Ports.InitialEnt(portName, baudRate, (status,data) =>
+            Ports.InitialEnt(portName, baudRate, (isConnected, status, data) =>
             {
-                if (status)
+                if (isConnected && status)
                 {
-                    receivedDataAction(true, (byte[])data);//接收实际数据回传
-                    Spliter.Split((byte[])data, StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithHead,(msgData)=> {
+                    receivedDataAction(true, true, (byte[])data);//接收实际数据回传
+                    Spliter.Split((byte[])data, StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithHead, (msgData) =>
+                    {
                         receivedMessageData((MessageData)msgData);//接收数据中识别报文回传
                     });
                 }
                 else
                 {
-                    receivedDataAction(false, (string)data);//返回错误信息
+                    receivedDataAction(isConnected, status, (string)data);//返回状态信息
                 }
             });
         }

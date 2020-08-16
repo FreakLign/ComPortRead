@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO.Ports;
 
 namespace ComPort
@@ -17,32 +18,33 @@ namespace ComPort
         /// <param name="baudRateOfOut">输入串口名</param>
         /// <param name="baudRateOfEnt">输入串口波特率</param>
         /// <param name="initialEntCallback">输入串口数据接收回调</param>
-        public static void InitialEnt(string portNameOfEnt, int baudRateOfEnt, Action<bool,object> initialEntCallback)
+        public static void InitialEnt(string portNameOfEnt, int baudRateOfEnt, Action<bool, bool, object> initialEntCallback)
         {
             if (portNameOfEnt == null || portNameOfEnt == "")
             {
-                initialEntCallback(false, "串口初始化失败"); ;
+                initialEntCallback(false, false, "串口初始化失败"); ;
                 return;
-            } 
+            }
             _portEnt = new SerialPort(portNameOfEnt);
             _portEnt.BaudRate = baudRateOfEnt;
             try
             {
                 _portEnt.Open();
+                initialEntCallback(true, false, "接收串口连接成功");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                initialEntCallback(false,ex.Message);
+                initialEntCallback(false, false, ex.Message);
                 return;
             }
             _portEnt.DataReceived += (o, e) =>
             {
-                byte[] recvData = new byte[_portEnt.BytesToRead];
-                while(_portEnt.BytesToRead > 0)
+                List<byte> recvData = new List<byte>(); ;
+                while (_portEnt.BytesToRead > 0)
                 {
-                    _portEnt.Read(recvData, 0, _portEnt.BytesToRead);
+                    recvData.Add((byte)_portEnt.ReadByte());
                 }
-                if(recvData.Length > 0) initialEntCallback(true, recvData);
+                if (recvData.Count > 0) initialEntCallback(true, true, recvData.ToArray());
             };
         }
         /// <summary>
@@ -51,7 +53,7 @@ namespace ComPort
         /// <param name="portNameOfOut">输出串口名</param>
         /// <param name="baudRateOfOut">输出串口波特率</param>
         /// <param name="initialOutCallback">初始化回调</param>
-        public static void InitialOut(string portNameOfOut, int baudRateOfOut, Action<string > initialOutCallback)
+        public static void InitialOut(string portNameOfOut, int baudRateOfOut, Action<bool, string> initialOutCallback)
         {
 
             if (portNameOfOut != null && portNameOfOut != "") _portOut = new SerialPort(portNameOfOut);
@@ -62,31 +64,47 @@ namespace ComPort
             }
             catch (Exception ex)
             {
-                initialOutCallback(ex.Message);
+                initialOutCallback(false, ex.Message);
                 return;
             }
-            initialOutCallback("发送串口连接成功");
+            initialOutCallback(true, "发送串口连接成功");
         }
         /// <summary>
         /// 关闭输入串口
         /// </summary>
-        public static void CloseEntryPort()
+        public static void CloseEntryPort(Action<bool, string> closedAction)
         {
-            if (_portEnt != null && _portEnt.IsOpen) _portEnt.Close();
+            try
+            {
+                if (_portEnt != null && _portEnt.IsOpen) _portEnt.Close();
+                closedAction(true, "已关闭接收串口");
+            }
+            catch (Exception ex)
+            {
+                closedAction(false, ex.Message);
+            }
         }
         /// <summary>
         /// 关闭输出串口
         /// </summary>
-        public static void CloseOutPort()
+        public static void CloseOutPort(Action<bool, string> closedAction)
         {
-            if (_portOut != null && _portOut.IsOpen) _portOut.Close();
+            try
+            {
+                if (_portOut != null && _portOut.IsOpen) _portOut.Close();
+                closedAction(true, "已关闭发送接口");
+            }
+            catch (Exception ex)
+            {
+                closedAction(false, ex.Message);
+            }
         }
         /// <summary>
         /// 发送数据
         /// </summary>
         /// <param name="data">发送的数据</param>
         /// <param name="sendCallback">发送回调</param>
-        public static void SendOut(byte[] data, Func<string, byte[]> sendCallback)
+        public static void SendOut(byte[] data, Action<string> sendCallback)
         {
             if (_portOut == null)
             {
@@ -99,7 +117,6 @@ namespace ComPort
                 return;
             }
             _portOut.Write(data, 0, data.Length);
-            sendCallback("");
         }
     }
 }

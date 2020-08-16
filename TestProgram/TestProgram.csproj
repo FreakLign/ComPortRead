@@ -109,6 +109,14 @@
       <Project>{c99e15bb-c543-4da9-b295-6e52ef13a29c}</Project>
       <Name>HexDataHandle</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataReceiver\DataReceiver.csproj">
+      <Project>{E978FF98-6691-4D11-9B91-2333D2B11ADB}</Project>
+      <Name>DataReceiver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSend\DataSend.csproj">
+      <Project>{D23CE063-958A-4D57-927D-5E1F878C2C83}</Project>
+      <Name>DataSend</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataSplitAndRecognize\DataSplitAndRecognize.csproj">
       <Project>{4e37febf-d0e2-446a-a93e-b824f23b9fe5}</Project>
       <Name>DataSplitAndRecognize</Name>
