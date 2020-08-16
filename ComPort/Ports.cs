@@ -51,7 +51,7 @@ namespace ComPort
         /// <param name="portNameOfOut">输出串口名</param>
         /// <param name="baudRateOfOut">输出串口波特率</param>
         /// <param name="initialOutCallback">初始化回调</param>
-        public static void InitialOut(string portNameOfOut, int baudRateOfOut, string portNameOfEnt, int baudRateOfEnt, Func<string ,byte[]> initialOutCallback)
+        public static void InitialOut(string portNameOfOut, int baudRateOfOut, Action<string > initialOutCallback)
         {
 
             if (portNameOfOut != null && portNameOfOut != "") _portOut = new SerialPort(portNameOfOut);
