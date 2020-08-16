@@ -8,6 +8,6 @@ namespace DataSend
 {
     public class Sender
     {
-
+        public static void 
     }
 }
