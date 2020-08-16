@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSend", "DataSend\DataSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataReceiver", "DataReceiver\DataReceiver.csproj", "{E978FF98-6691-4D11-9B91-2333D2B11ADB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCompare", "GetCompare\GetCompare.csproj", "{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{E978FF98-6691-4D11-9B91-2333D2B11ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E978FF98-6691-4D11-9B91-2333D2B11ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E978FF98-6691-4D11-9B91-2333D2B11ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		{4E37FEBF-D0E2-446A-A93E-B824F23B9FE5} = {2A675244-8AB7-4F1F-9E97-EEE3CF195FE6}
 		{D23CE063-958A-4D57-927D-5E1F878C2C83} = {2A675244-8AB7-4F1F-9E97-EEE3CF195FE6}
 		{E978FF98-6691-4D11-9B91-2333D2B11ADB} = {2A675244-8AB7-4F1F-9E97-EEE3CF195FE6}
+		{648E55DD-7E36-487A-ACFA-2DB4CBDE4DDB} = {2A675244-8AB7-4F1F-9E97-EEE3CF195FE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA152E07-EAF6-4E60-A63F-22374A3C7AA2}

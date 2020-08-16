@@ -34,7 +34,7 @@ namespace StaticMessageTypeInRuntime
         /// 加载报文类型
         /// </summary>
         /// <returns>类型名称</returns>
-        public static string[] LoadTypes()
+        public static bool LoadTypes(Action<string[]> action)
         {
             /***********************************************************
              *      1. 读取文件夹中所有JSON文件
@@ -66,8 +66,9 @@ namespace StaticMessageTypeInRuntime
                     }
                 }
             }
-            if (typeNames.Count == 0) return null;
-            return typeNames.ToArray();
+            if (typeNames.Count == 0) return false;
+            action(typeNames.ToArray());
+            return true;
         }
     }
 }
