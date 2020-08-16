@@ -6,7 +6,7 @@ namespace ComPort
     /// <summary>
     /// 串口初始化（初始化接收串口，注册串口接收事件）| 关闭串口 | 发送数据
     /// </summary>
-    public class ComPort
+    public class Ports
     {
         private static SerialPort _portOut;//出串口
         private static SerialPort _portEnt;//入串口
@@ -17,11 +17,11 @@ namespace ComPort
         /// <param name="baudRateOfOut">输入串口名</param>
         /// <param name="baudRateOfEnt">输入串口波特率</param>
         /// <param name="initialEntCallback">输入串口数据接收回调</param>
-        public static void InitialEnt(string portNameOfEnt, int baudRateOfEnt, Action<string,byte[]> initialEntCallback)
+        public static void InitialEnt(string portNameOfEnt, int baudRateOfEnt, Action<bool,object> initialEntCallback)
         {
             if (portNameOfEnt == null || portNameOfEnt == "")
             {
-                initialEntCallback("串口名为空", null); ;
+                initialEntCallback(false, "串口初始化失败"); ;
                 return;
             } 
             _portEnt = new SerialPort(portNameOfEnt);
@@ -32,7 +32,7 @@ namespace ComPort
             }
             catch(Exception ex)
             {
-                initialEntCallback(ex.Message,null);
+                initialEntCallback(false,ex.Message);
                 return;
             }
             _portEnt.DataReceived += (o, e) =>
@@ -42,7 +42,7 @@ namespace ComPort
                 {
                     _portEnt.Read(recvData, 0, _portEnt.BytesToRead);
                 }
-                if(recvData.Length > 0) initialEntCallback("接收到数据", recvData);
+                if(recvData.Length > 0) initialEntCallback(true, recvData);
             };
         }
         /// <summary>
@@ -55,9 +55,7 @@ namespace ComPort
         {
 
             if (portNameOfOut != null && portNameOfOut != "") _portOut = new SerialPort(portNameOfOut);
-            if (portNameOfEnt != null && portNameOfEnt != "") _portEnt = new SerialPort(portNameOfEnt);
             if (portNameOfOut != null && portNameOfOut != "") _portOut.BaudRate = baudRateOfOut;
-            if (portNameOfEnt != null && portNameOfEnt != "") _portEnt.BaudRate = baudRateOfEnt;
             try
             {
                 _portOut.Open();

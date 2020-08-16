@@ -1,0 +1,6 @@
+D:\Project Code\ComPortRead\DataSend\bin\Debug\DataSend.dll
+D:\Project Code\ComPortRead\DataSend\bin\Debug\DataSend.pdb
+D:\Project Code\ComPortRead\DataSend\obj\Debug\DataSend.csprojAssemblyReference.cache
+D:\Project Code\ComPortRead\DataSend\obj\Debug\DataSend.csproj.CoreCompileInputs.cache
+D:\Project Code\ComPortRead\DataSend\obj\Debug\DataSend.dll
+D:\Project Code\ComPortRead\DataSend\obj\Debug\DataSend.pdb
