@@ -28,63 +28,77 @@ namespace TestProgram
     /// </summary>
     public partial class TestWindow : Window
     {
+        Sender _sender;
         public TestWindow()
         {
             InitializeComponent();
+            LegalMessageType.LoadTypes((s) => { });
 
+            _sender = new Sender("Com3", 4800, (b, ee) => { MessageBox.Show(ee); });
             //foreach (string str in LegalMessageType.LoadTypes())
             //{
             //    OutputBox.Text += str + "\n";
             //}
-            Sender sender = new Sender("Com2", 4800, (b, e) => { OutputBox.Text += e + "\n"; });
-            Receiver receiver = new Receiver("Com3", 4800, (b1, b, o) =>
+            //Sender sender = new Sender("Com2", 4800, (b, e) => { OutputBox.Text += e + "\n"; });
+            //Receiver receiver = new Receiver("Com3", 4800, (b1, b, o) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t接收数据：" + (b ? HexCode.GetString((byte[])o) + "\n" : (string)o + "\n");
+            //    });
+            //}, (o) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t接收到报文:" + HexCode.GetString(((MessageData)o).CompleteData) + "\n";
+            //    });
+            //});
+            //sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["B13+"], new byte[] { 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa }), (e) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
+            //    });
+            //});
+            //sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
+            //    });
+            //});
+            //sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["B13+"], new byte[] { 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa }), (e) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
+            //    });
+            //});
+            //sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
+            //    });
+            //});
+            //sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
+            //{
+            //    this.Dispatcher.Invoke(() =>
+            //    {
+            //        OutputBox.Text += "错误信息" + (string)e;
+            //    });
+            //});
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] data = HexCode.GetHex(toSendData.Text);
+            if (data == null)
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t接收数据：" + (b ? HexCode.GetString((byte[])o) + "\n" : (string)o + "\n");
-                });
-            }, (o) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t接收到报文:" + HexCode.GetString(((MessageData)o).CompleteData) + "\n";
-                });
-            });
-            sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["B13+"], new byte[] { 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa }), (e) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
-                });
-            });
-            sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
-                });
-            });
-            sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["B13+"], new byte[] { 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa }), (e) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
-                });
-            });
-            sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += DateTime.Now.ToString("yyyy-MM-hh-mm-ss-fffffff") + "\t错误信息" + (string)e;
-                });
-            });
-            sender.SendMessage(new MessageData(StaticMessageTypeInRuntime.LegalMessageType.MessageTypesDictionaryWithName["c7"], new byte[] { 0xdd, 0xdd, 0xcc }), (e) =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    OutputBox.Text += "错误信息" + (string)e;
-                });
-            });
+                MessageBox.Show("Data is empty");
+                return;
+            }
+            _sender.SendMessage(new MessageData(LegalMessageType.MessageTypesDictionaryWithName["c7"], HexCode.GetHex(toSendData.Text)),(str)=> { });
         }
     }
 }

@@ -12,9 +12,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="215*"/>
             <RowDefinition Height="204*"/>
+            <RowDefinition Height="204*"/>
         </Grid.RowDefinitions>
         <TextBlock
             x:Name="OutputBox" TextWrapping="Wrap"></TextBlock>
-        
+        <TextBox Grid.Row="1" x:Name="toSendData">
+            
+        </TextBox>
+        <Button
+            Click="Button_Click"
+            Grid.Row="2">
+            点击发送
+        </Button>
     </Grid>
 </Window>
