@@ -11,6 +11,13 @@ namespace DataReceiver
 {
     public class Receiver
     {
+        /// <summary>
+        /// 实例化接收串口，注册接收事件
+        /// </summary>
+        /// <param name="portName">串口名</param>
+        /// <param name="baudRate">串口波特率</param>
+        /// <param name="receivedDataAction">当串口接收到数据时bool 为True，object为byte[]，当返回错误信息时，bool为false，object为string</param>
+        /// <param name="receivedMessageData">当内容被识别为报文时，进行此方法</param>
         public Receiver(string portName, int  baudRate, Action<bool,object> receivedDataAction, Action<object> receivedMessageData)
         {
             Ports.InitialEnt(portName, baudRate, (status,data) =>
@@ -27,9 +34,6 @@ namespace DataReceiver
                     receivedDataAction(false, (string)data);//返回错误信息
                 }
             });
-        }
-        public static void DoIt()
-        {
         }
     }
 }

@@ -44,5 +44,39 @@
     <Compile Include="Sender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComPort\ComPort.csproj">
+      <Project>{916032d0-e858-4a54-bda4-f4999df5574b}</Project>
+      <Name>ComPort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataHandle\HexDataHandle.csproj">
+      <Project>{c99e15bb-c543-4da9-b295-6e52ef13a29c}</Project>
+      <Name>HexDataHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSplitAndRecognize\DataSplitAndRecognize.csproj">
+      <Project>{4e37febf-d0e2-446a-a93e-b824f23b9fe5}</Project>
+      <Name>DataSplitAndRecognize</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Encryption\Encryption.csproj">
+      <Project>{70d2fe46-fe55-4fd5-b2a8-14c453a0ecfc}</Project>
+      <Name>Encryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileHandle\FileHandle.csproj">
+      <Project>{2ea9742a-f5fc-4c47-a736-09c0a6755bbb}</Project>
+      <Name>FileHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormHandle\FormHandle.csproj">
+      <Project>{b3daeea0-ff90-4b4f-bfce-ab9a5de7b9af}</Project>
+      <Name>FormHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessageHandle\MessageHandle.csproj">
+      <Project>{674e257e-637b-4485-acb8-fc9b2ff1a7d1}</Project>
+      <Name>MessageHandle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StaticMessageTypeInRuntime\StaticMessageTypeInRuntime.csproj">
+      <Project>{04e440b1-b1e2-461b-8114-9a5eb78d1e04}</Project>
+      <Name>StaticMessageTypeInRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
